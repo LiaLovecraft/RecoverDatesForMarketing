@@ -15,6 +15,13 @@ I chose to do this via the following process:
 3. Use DateTime.TryParseExact to filter out non-dates from step 2 (i.e., leap year violations, "June 31st" dates, etc.)
 4. Filter using today's date to exclude any dates from step 3 >= today
 
+The reasons I chose to do it in this way are that first, using regex to strip possible corrupt non-printing characters and then 
+again using regex to filter out date-like strings is a quick and easy way to start; second, DateTime.TryParseExact will ensure 
+that any date-like but incorrect values are filtered out; third, this is a quick first shot at things which I can then review 
+and iteratively alter / improve with my business users' input. It lets me get some data in front of them quickly, and their input 
+can then help determine whether these dates look good and perhaps the corruption was minor, or if the problem is a more major one.
+
+
 I have concerns and questions about this, which I would convey to marketing: 
 
 1. Even the exact-match dates pulled from the file may be false positives, as the corruption may have produced a valid date due to character substitution or insertion. 
