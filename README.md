@@ -16,7 +16,7 @@ I chose to do this via the following process:
 4. Filter using today's date to exclude any dates from step 3 >= today
 
 The reasons I chose to do it in this way are that first, using regex to strip possible corrupt non-printing characters and then 
-again using regex to filter out date-like strings is a quick and easy way to start; second, DateTime.TryParseExact will ensure 
+again using regex to identify date-like strings is a quick and easy way to start; second, DateTime.TryParseExact will ensure 
 that any date-like but incorrect values are filtered out; third, this is a quick first shot at things which I can then review 
 and iteratively alter / improve with my business users' input. It lets me get some data in front of them quickly, and their input 
 can then help determine whether these dates look good and perhaps the corruption was minor, or if the problem is a more major one.
