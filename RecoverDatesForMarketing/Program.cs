@@ -12,16 +12,16 @@ namespace RecoverDatesForMarketing
         {
             if (args.Length == 0)
             {
-                System.Console.WriteLine(@"Please enter the name of the file you wish to parse. 
-If the file is not in the current directory, please specify the full path as well as the filename");
-                System.Console.WriteLine("Usage: ParseDataForMarketing <file_to_parse>");
+                Console.WriteLine(@"Please enter the name of the file you wish to parse. If the file is not in the current directory, please specify the full path as well as the filename");
+                Console.WriteLine("Usage: RecoverDatesForMarketing <file_to_parse>");
                 return;
             }
 
             var fname = args[0];
             if (!File.Exists(fname))
             {
-                throw new FileNotFoundException($"Specified file '{fname}' not found");
+                Console.WriteLine($"Specified file '{fname}' not found");
+                return;
             }
 
             //caveat: if this needed to handle huge files that would tax system memory, I'd look 

@@ -3,6 +3,10 @@ Coding exercise for Valant
 
 A program to attempt to recover dates from a possibly corrupted data file. 
 
+'''
+Usage: RecoverDatesForMarketing <file_to_parse>
+'''
+
 Actually, the very first thing I would do would be to see if there is any possible way to get a fresh export - corrupted data 
 files are of course not reliable, and I would personally hate for decisions of any sort to be made based on them. Failing this, 
 I would see if there are any examples of previously received non-corrupt files from the same source. Having said that, I did go 
