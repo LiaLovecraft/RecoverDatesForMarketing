@@ -28,7 +28,8 @@ If the file is not in the current directory, please specify the full path as wel
             //into other approaches and process the file in manageable chunks instead of all at once
             var txt = File.ReadAllText(fname);
 
-            //strip non-printing control chars including crlf
+            //strip non-printing control chars including crlf; alternative since this is an all-numeric file
+            //would be to just remove everything that isn't a digit using [^\d] - would be more thorough ...
             var pattern = @"[\x00-\x1F\x7F]";
             var rgx = new Regex(pattern);
             txt = rgx.Replace(txt, "");
